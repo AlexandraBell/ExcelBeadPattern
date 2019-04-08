@@ -1,1 +1,2 @@
 C:\Users\JinSh\Documents\GitHub\ExcelBeadPattern\ExcelBeadPattern\ExcelBeadPattern\bin\Debug\ExcelBeadPattern.exe.config
+C:\Users\JinSh\Documents\GitHub\ExcelBeadPattern\ExcelBeadPattern\ExcelBeadPattern\obj\Debug\ExcelBeadPattern.csproj.ResolveComReference.cache
