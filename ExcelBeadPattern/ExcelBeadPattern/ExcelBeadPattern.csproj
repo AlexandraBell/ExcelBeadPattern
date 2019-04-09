@@ -45,7 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bead.cs" />
+    <Compile Include="BeadUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserInput.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -21,6 +21,8 @@ namespace ExcelBeadPattern
         public static string USER_DISP_COMMA = ", ";
         public static string USER_DISP_ENTER_VALID_INPUT = "Please enter in valid input.";
         public static string USER_DISP_AGAIN = "\nWould you like to generate more prime numbers?";
+        public static string USER_DISP_DIMENSIONS = "Please input the dimensions you would like your image to be separated by a space. Ex: 24 24";
+        public static string USER_DISP_RETRY_IMAGE = "Please enter in a different image location.";
 
         //Internal checking strings
         public static string[] CHECK_EXIT_ARRAY_REGEX = { "Q", "QUIT", "EXIT" };

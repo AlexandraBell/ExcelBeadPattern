@@ -8,7 +8,7 @@ namespace ExcelBeadPattern
 {
     public class UserInput
     {
-        public static void Main(string[] args)
+        public static void stuff(string[] args)
         {
             //Need to modify to take an image then size
             bool quit = false;
@@ -163,28 +163,28 @@ namespace ExcelBeadPattern
         public static int[] populateNumRange(string input)
         {
             //we know by this point that the string only has 1 space and both are valid numbers
-            int[] orderedNums = new int[BeadUtils.TWO];
-            int temp;
-            int temp2;
-
+            int[] workbookDimensions = new int[BeadUtils.TWO];
+            
             String[] splitInput = input.Split(BeadUtils.SPLIT_SPACE);
 
-            temp = int.Parse(splitInput[BeadUtils.ZERO]);
-            temp2 = int.Parse(splitInput[BeadUtils.ONE]);
-
-            if (temp < temp2)
-            {
-                orderedNums[BeadUtils.ZERO] = temp;
-                orderedNums[BeadUtils.ONE] = temp2;
-            }
-            else
-            {
-                //we know that the numbers are either the same or temp2 > temp
-                orderedNums[BeadUtils.ZERO] = temp2;
-                orderedNums[BeadUtils.ONE] = temp;
-            }
-            return orderedNums;
+            workbookDimensions[BeadUtils.ZERO] = int.Parse(splitInput[BeadUtils.ZERO]);
+            workbookDimensions[BeadUtils.ONE] = int.Parse(splitInput[BeadUtils.ONE]);
+            
+            return workbookDimensions;
         }
 
+        //Currently leaving this as taking the whole array, may change as I solidify design.
+        /*
+        * inputValidation will take user input file and make sure
+        * 1) The file has a valid extension for an image
+        * 2) The file can be opened
+        */
+        //TODO - Fill out
+        public static bool inputFileNameValidation(string input)
+
+        {
+
+            throw new NotImplementedException();
+        }
     }
 }

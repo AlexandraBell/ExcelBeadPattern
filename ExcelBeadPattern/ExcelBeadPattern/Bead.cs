@@ -14,15 +14,26 @@ namespace ExcelBeadPattern
         static void Main(string[] args)
         {
             //I also wanted the user to be able to specify their grid size
+            bool quit = false;
+            bool isValidImage;
 
-            //Validate file path and return an error to the user if it doesn't exist.
-            inputFileNameValidation(args);
+            Console.WriteLine(BeadUtils.USER_DISP_WELCOME);
+            Console.WriteLine(BeadUtils.USER_DISP_QUIT);
 
+
+            String uInput = Console.ReadLine();
+            //Validate file path and return an error to the user if it doesn't exist.            
+            isValidImage = UserInput.inputFileNameValidation(uInput);
+            if(!isValidImage)
+            {
+                Console.WriteLine(BeadUtils.USER_DISP_RETRY_IMAGE);
+            }
             //Create objects before they're needed
             Image beadIm;
             //Once validated, make a local copy to preserve original file
             beadIm = Image.FromFile(args[0]);
 
+            Console.WriteLine(BeadUtils.USER_DISP_DIMENSIONS);
             //Next we are going to want to parse the image and place it into the excel file
             imageParsing(beadIm);
 
@@ -32,19 +43,25 @@ namespace ExcelBeadPattern
             Workbook final = excelPopulation();
         }
 
-        //Currently leaving this as taking the whole array, may change as I solidify design.
         /*
-        * inputValidation will take user input file and make sure
-        * 1) The file has a valid extension for an image
-        * 2) The file can be opened
-        */
-        //TODO - Fill out
-        private static void inputFileNameValidation(string[] args)
+            while (!quit && !String.IsNullOrEmpty(uInput))
+            {
+                quit = inputQuit(uInput.ToString());
+                if (!quit)
+                {
+                    uInput = dispAndValidUserInput(uInput);
+                    if (!String.IsNullOrEmpty(uInput))
+                    {
+                        int[] primeRange = populateNumRange(uInput);
+                        //Gen the excel sheet
 
-        {
+                        //ask user for another
+                        Console.WriteLine(BeadUtils.USER_DISP_AGAIN);
+                    }
 
-            throw new NotImplementedException();
-        }
+                    uInput = Console.ReadLine();
+                }
+*/
 
         //This method is going to transform the image into the excel file
         //I'm still unsure if I want to store the information in array/map/object and 
